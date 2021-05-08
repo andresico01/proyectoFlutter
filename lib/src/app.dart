@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,15 +11,17 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       theme: ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.cyan[300],
-        accentColor: Colors.cyan[800],
+        primaryColor: Colors.indigo[400],
+        accentColor: Colors.red[900],
       ),
       onGenerateRoute: (RouteSettings settings){
         return MaterialPageRoute(
-            builder: (BuildContext context){
+            builder: (BuildContext contexts){
               switch(settings.name){
                 case "/":
-                  return LoginPage(context);
+                  return MyHomePage(context: contexts);
+                default :
+                  return MyHomePage(context: contexts);
               }
             },
         );
